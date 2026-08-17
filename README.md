@@ -9,11 +9,33 @@ After installation, two classes can be used, ``Scenario`` and ``AllScenarios``
 
 ### ``Scenario``
 
+Simple example of using the `Scenario` class
+
+```python
+>>> from tne20002_scenario_calculator import Scenario
+
+>>> s = Scenario('123456789', 2)
+>>> print(s)
+Student ID     : 123456789
+Scenario       : 2
+-----------------------------------------
+Corporate Addr : 148.79.0.0/16
+ISP Link Addr  : 204.3.58.0/30
+VLANXXX        : VLAN789
+VLANYYY        : VLAN456
+VLANZZZ        : VLAN13
+```
+
 #### Constructor
 
 <tt>class tne20002_scenario_calculator.<b>Scenario</b>(student_id: <i>str | int</i>, scenario_id: <i>int</i>)</tt>
 
 <ul>
+
+| Parameter      | Type         | Description                                                              |
+|----------------|--------------|--------------------------------------------------------------------------|
+| `student_id`   | `str \| int` | Student ID to construct the scenario for, either in string or int format |
+| `scenario_id`  | `int`        | Scenario ID to construct                                                 |
 
 Create all parameters for a single scenario
 
@@ -35,6 +57,8 @@ Upon construction, the class will contain all calculated variables/parameters in
 
 #### Properties
 
+<ul>
+
 | Property                                | Type                    | Description                                                          |
 |------------------------------------------------|-------------------------|----------------------------------------------------------------------|
 | <code>Scenario.<b>id</b></code>                | `str`                   | A string containing the student ID associated with the Scenario      |
@@ -46,6 +70,7 @@ Upon construction, the class will contain all calculated variables/parameters in
 | <code>Scenario.<b>corporate_address</b></code> | `ipaddress.IPv4Network` | Calculated network address for the Corporate network in the scenario | 
 | <code>Scenario.<b>isp_address</b></code>       | `ipaddress.IPv4Network` | Calculated network address for the ISP Link network in the scenario  | 
 
+</ul>
 
 #### Methods
 
@@ -62,11 +87,11 @@ Dictionary containing calculated parameters that can be used either for display 
 The string representation of a ``Scenario`` instance is a multi-line string displaying all parameters that can be 
 printed to screen
 
-### ``AllScenarios``
+### <code>class tne20002_scenario_calculator.<b>AllScenarios</b>(student_id: <i>str | int</i>)</code>
 
 #### Constructor
 
-<tt>class tne20002_scenario_calculator.<b>AllScenarios</b>(student_id: <i>str | int</i>)</tt>
+<code>class tne20002_scenario_calculator.<b>AllScenarios</b>(student_id: <i>str | int</i>)</code>
 
 <ul>
 
