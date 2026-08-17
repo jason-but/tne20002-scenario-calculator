@@ -23,12 +23,12 @@ Corporate Addr : 148.79.0.0/16
 ISP Link Addr  : 204.3.58.0/30
 VLANXXX        : VLAN789
 VLANYYY        : VLAN456
-VLANZZZ        : VLAN13
+VLANZZZ        : VLAN130
 ```
 
 #### Constructor
 
-<tt>class tne20002_scenario_calculator.<b>Scenario</b>(student_id: <i>str | int</i>, scenario_id: <i>int</i>)</tt>
+<code>class tne20002_scenario_calculator.<b>Scenario</b>(student_id: <i>str | int</i>, scenario_id: <i>int</i>)</code>
 
 <ul>
 
@@ -87,7 +87,24 @@ Dictionary containing calculated parameters that can be used either for display 
 The string representation of a ``Scenario`` instance is a multi-line string displaying all parameters that can be 
 printed to screen
 
-### <code>class tne20002_scenario_calculator.<b>AllScenarios</b>(student_id: <i>str | int</i>)</code>
+### ``AllScenarios``
+
+Simple example of using the `Scenario` class
+
+```python
+>>> from tne20002_scenario_calculator import AllScenarios
+
+>>> a = AllScenarios('123456789')
+>>>  print(a.scenarios[3])
+Student ID     : 123456789
+Scenario       : 3
+-----------------------------------------
+Corporate Addr : 131.79.0.0/17
+ISP Link Addr  : 211.13.88.0/30
+VLANXXX        : VLAN789
+VLANYYY        : VLAN456
+VLANZZZ        : VLAN112
+```
 
 #### Constructor
 
@@ -95,7 +112,11 @@ printed to screen
 
 <ul>
 
-Create all <tt>Scenario</tt> instances for a single student ID
+| Parameter      | Type         | Description                                                               |
+|----------------|--------------|---------------------------------------------------------------------------|
+| `student_id`   | `str \| int` | Student ID to construct the scenarios for, either in string or int format |
+
+Create all scenarios for a single student ID
 
 Upon construction, the class will contain a dictionary mapping valid scenario numbers to <tt>Scenario</tt> instances for
 a single student
@@ -125,6 +146,10 @@ a single student
 
 <ul>
 
+| Parameter | Type            | Description                        |
+|-----------|-----------------|------------------------------------|
+| `path`    | `pathlib.Path`  | Path to the CSV file to be created |
+
 Write the Scenarios dictionary to a CSV file
 
 </ul>
@@ -132,6 +157,10 @@ Write the Scenarios dictionary to a CSV file
 <tt>Scenario.<b>csv_bytes</b>(scenario: <i>int | None = None</i>)</tt>
 
 <ul>
+
+| Parameter  | Type          | Description                                                                                                                   |
+|------------|---------------|-------------------------------------------------------------------------------------------------------------------------------|
+| `scenario` | `int \| None` | If provided, this scenario number only will be convered to a CSV file. If None, all scenarios will be convered to a CSV file  |
 
 Write all - or one - scenario(s) to a bytes object as a CSV file that can be saved/streamed (for Streamlit application)
 
