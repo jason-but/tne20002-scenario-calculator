@@ -11,7 +11,7 @@ After installation, two classes can be used, ``Scenario`` and ``AllScenarios``
 
 #### Constructor
 
-<tt>class tne20002_scenario_calculator.<b>Scenario</b>(student_id: <i>str | int</i>, scenario_id: <i>int</i>)
+<tt>class tne20002_scenario_calculator.<b>Scenario</b>(student_id: <i>str | int</i>, scenario_id: <i>int</i>)</tt>
 
 <ul>
 
@@ -98,7 +98,7 @@ printed to screen
 
 #### Constructor
 
-<tt>class tne20002_scenario_calculator.<b>AllScenarios</b>(student_id: <i>str | int</i>)
+<tt>class tne20002_scenario_calculator.<b>AllScenarios</b>(student_id: <i>str | int</i>)</tt>
 
 <ul>
 
@@ -161,3 +161,8 @@ Write all - or one - scenario(s) to a bytes object as a CSV file that can be sav
 
 </ul>
 
+## Streamlit App
+
+The streamlit app can be launched from the parent directory via:
+
+``streamlit run app.py``
