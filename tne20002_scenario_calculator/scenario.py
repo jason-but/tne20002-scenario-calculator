@@ -222,12 +222,12 @@ class Scenario:
     @property
     def corporate_address(self):
         """Calculated Corporate Network address"""
-        return self.corporate_address
+        return self.__corporate_address
 
     @property
     def isp_address(self):
         """Calculated ISP Network address"""
-        return self.isp_address
+        return self.__isp_address
 
     def as_dict(self) -> dict:
         """Return a dictionary representation of the calculated scenario"""
