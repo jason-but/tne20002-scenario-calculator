@@ -205,27 +205,27 @@ class Scenario:
         return self.__label
 
     @property
-    def vlanxxx(self):
+    def vlanxxx(self) -> int:
         """Calculated VLANXXX number"""
         return self.__vlanxxx
 
     @property
-    def vlanyyy(self):
+    def vlanyyy(self) -> int:
         """Calculated VLANYYY number"""
         return self.__vlanyyy
 
     @property
-    def vlanzzz(self):
+    def vlanzzz(self) -> int:
         """Calculated VLANZZZ number"""
         return self.__vlanzzz
 
     @property
-    def corporate_address(self):
+    def corporate_address(self) -> ipaddress.IPv4Network:
         """Calculated Corporate Network address"""
         return self.__corporate_address
 
     @property
-    def isp_address(self):
+    def isp_address(self) -> ipaddress.IPv4Network:
         """Calculated ISP Network address"""
         return self.__isp_address
 
