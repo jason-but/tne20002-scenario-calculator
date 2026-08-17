@@ -33,53 +33,21 @@ Upon construction, the class will contain all calculated variables/parameters in
 
 </ul>
 
-#### Methods and Properties
+#### Properties
 
-<tt>Scenario.<b>id</b></tt>
+| Property                                | Type                    | Description                                                          |
+|------------------------------------------------|-------------------------|----------------------------------------------------------------------|
+| <code>Scenario.<b>id</b></code>                | `str`                   | A string containing the student ID associated with the Scenario      |
+| <code>Scenario.<b>scenario</b></code>          | `int`                   | An integer representing the Scenario number                          |
+| <code>Scenario.<b>label</b></code>             | `str`                   | Scenario Label/description as string                                 |
+| <code>Scenario.<b>vlanxxx</b></code>           | `int`                   | Calculated VLAN number for VLANXXX in the scenario                   |
+| <code>Scenario.<b>vlanyyy</b></code>           | `int`                   | Calculated VLAN number for VLANYYY in the scenario                   |
+| <code>Scenario.<b>vlanzzz</b></code>           | `int`                   | Calculated VLAN number for VLANZZZ in the scenario                   |
+| <code>Scenario.<b>corporate_address</b></code> | `ipaddress.IPv4Network` | Calculated network address for the Corporate network in the scenario | 
+| <code>Scenario.<b>isp_address</b></code>       | `ipaddress.IPv4Network` | Calculated network address for the ISP Link network in the scenario  | 
 
-<ul>
 
-A string containing the student ID associated with the Scenario
-
-</ul>
-
-<tt>Scenario.<b>scenario</b></tt>
-
-<ul>
-
-An integer representing the Scenario number
-
-</ul>
-
-<tt>Scenario.<b>label</b></tt>
-
-<ul>
-
-Scenario Label/description as string
-
-</ul>
-
-<tt>Scenario.<b>vlanxxx</b></tt>
-
-<tt>Scenario.<b>vlanyyy</b></tt>
-
-<tt>Scenario.<b>vlanzzz</b></tt>
-
-<ul>
-
-Calculated VLAN numbers for each of the scenario VLANs
-
-</ul>
-
-<tt>Scenario.<b>corporate_address</b></tt>
-
-<tt>Scenario.<b>isp_address</b></tt>
-
-<ul>
-
-<tt>ipaddress.IPv4Network</tt> instance representing each of the scenario network addresses
-
-</ul>
+#### Methods
 
 <tt>Scenario.as_dict()</tt>
 
@@ -119,23 +87,14 @@ a single student
 
 </ul>
 
-#### Methods and Properties
+#### Properties
 
-<tt>Scenario.<b>scenarios</b></tt>
+| Property                                   | Type                 | Description                                                                |
+|--------------------------------------------|----------------------|----------------------------------------------------------------------------|
+| <code>AllScenarios.<b>scenarios</b></code> | `dict[int, Scenario` | A dictionary object mapping scenario numbers to `Scenario`</tt>` instances  |
 
-<ul>
+#### Methods
 
-A dictionary object mapping scenario numbers to <tt>Scenario</tt> instances
-
-</ul>
-
-<tt>Scenario.<b>scenario</b></tt>
-
-<ul>
-
-An integer representing the Scenario number
-
-</ul>
 
 <tt>Scenario.<b>write_csv</b>(path: <i>pathlib.Path</i>)</tt>
 
