@@ -38,8 +38,9 @@ class Scenario:
     _ISP_OCTET3_BASE: dict[int, int] = {1: 40, 2: 50, 3: 80, 4: 50, 5: 30, 6: 40}
 
     def __init__(self, student_id: str | int, scenario_id: int):
-        self.__id: str = self._normalise_id(student_id)
-        self.__id_digits: list[int] = [int(digit) for digit in self.__id]
+        self.__id: str = str(student_id)
+        normalised_id = self._normalise_id(student_id)
+        self.__id_digits: list[int] = [int(digit) for digit in normalised_id]
         if scenario_id not in self.SCENARIO_ID: raise ValueError(f"Scenario must be one of {', '.join(f'{self.SCENARIO_ID}')}, got {scenario_id!r}.")
         self.__scenario: int = scenario_id
         self.__label: str = self.SCENARIO_LABELS[self.__scenario]
