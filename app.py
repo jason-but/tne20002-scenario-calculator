@@ -42,36 +42,55 @@ st.markdown("""
 /* ── Sidebar text input — always dark to match sidebar ── */
 [data-testid="stSidebar"] .stTextInput input {
     color: #e8ecf4 !important;
-    background-color: #253460 !important;
+    background-color: #222222 !important;
     border-color: #3a4d7a !important;
 }
 
 /* ── Sidebar selectbox trigger (selected value + expand arrow) ── */
-[data-testid="stSidebar"] div[aria-haspopup="listbox"] {
-    background-color: #253460 !important;
-    border-color: #3a4d7a !important;
+.stSelectbox input[role="combobox"] {
+    background-color: #222222 !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
 }
 
-/* Arrow/chevron icon */
-[data-testid="stSidebar"] div[aria-haspopup="listbox"] svg {
-    fill: #e8ecf4 !important;
+/* Container around input and button */
+.stSelectbox div[role="group"] {
+    background-color: #222222 !important;
+    border: 1px solid #3a4d7a !important;
 }
 
-/* Selected value text */
-[data-testid="stSidebar"] .stSelectbox div[data-baseweb="select"] span {
-    color: #e8ecf4 !important;
+/* Chevron button */
+.stSelectbox button {
+    background-color: #222222 !important;
 }
 
-/* ── Selectbox dropdown list ── */
+/* Chevron */
+.stSelectbox button svg {
+    fill: #00c8ff !important;
+    color: #00c8ff !important;
+}
+
+/* Dropdown menu */
 div[role="listbox"] {
-    background-color: #1a2744 !important;
-}
-div[role="option"] {
-    color: #e8ecf4 !important;
-    background-color: #1a2744 !important;
-}
-div[role="option"]:hover {
     background-color: #253460 !important;
+}
+
+/* All dropdown items - white on dark blue background */
+div[role="option"] {
+    background-color: #253460 !important;
+    color: #ffffff !important;
+}
+
+/* Hovered item - white on grey background */
+div[role="option"]:hover {
+    background-color: #404040 !important;
+    color: #ffffff !important;
+}
+
+/* Selected item inside expanded list - white on blue background */
+div[aria-selected="true"] {
+    background-color: #1a6fc4 !important;
+    color: white !important;
 }
 
 /* ── Result cards ── */
@@ -115,12 +134,6 @@ div[role="option"]:hover {
     font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
     letter-spacing: .08em; color: #6b7a99; margin: 24px 0 8px 0;
 }
-
-/* ── Badge ── */
-.badge-ok  { background:#e6f4ea; color:#1e7e34;
-             border-radius:20px; padding:3px 12px; font-size:0.8rem; font-weight:600; }
-.badge-err { background:#fdecea; color:#c62828;
-             border-radius:20px; padding:3px 12px; font-size:0.8rem; font-weight:600; }
 
 /* ── All-weeks table ── */
 .styled-df thead th { background:#1a2744 !important; color:#fff !important; }
